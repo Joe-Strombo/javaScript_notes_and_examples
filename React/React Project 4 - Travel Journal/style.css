@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+.header--header {
+    height: 66px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 5px;
+    background-color: turquoise;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    border-radius: 10px; 
+    align-items: center;
+    justify-content: center; 
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-size: 40px;
+}
+
+.card {
+    margin-left: 25px;
+    margin-top: 25px;
+    width: 250px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.card--title {
+    display: flex;
+    flex-direction: column;
+}
+
+.img--test {
+    height: 150px;
+}
+
+.card--description {
+    height: 150px;
+}

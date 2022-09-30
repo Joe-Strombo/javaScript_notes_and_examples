@@ -1,0 +1,33 @@
+
+
+
+
+
+
+(buckle up boys these are gonna b messy. i been learning js on and off for way too long so these will be choppy but theyre for me and my ADHD brain so suck it)
+
+
+
+
+
+to manipulate and modify HTML ELEMENTS you use document.getElementById("my-element") then you SAVE IT IN A VARIABLE like so:
+
+myElement = document.getElementById("my-element")
+
+NOW you can modify and manipulate it using things like myElement.innerText = someVariable
+
+
+
+FUNCTIONS that are attached to OBJECTS are called METHODS (they are invoked the same way, using (), but they are attached to the end of objects like document.getElementbyId(). getElementbyId is the METHOD with the invoking right after it)
+
+
+the thing you put inside a FUNCTION's parenthesis is called its ARGUMENT. example:   console.Log(poop)   (the variable 'poop' is the ARGUMENT for the METHOD 'Log')
+
+
+
+(when working with document.blahblah you are working with the DOM)
+
+
+
+
+

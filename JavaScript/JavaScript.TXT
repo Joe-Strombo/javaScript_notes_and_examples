@@ -1,0 +1,217 @@
+
+
+TO COMMENT OUT A WHOLE SELECTION!!!!!:
+select what u wanna comment out, then hold alt + shift + a to AUTOMATICALLY COMMENT OUT BRUH
+
+
+
+GET ELEMENT BY ID (change HTML elements)
+document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+(change style variant)
+document.getElementById("demo").style.fontSize = "35px";
+
+
+To access an HTML element, JavaScript can use the document.getElementById(id) method.
+The id attribute defines the HTML element. The innerHTML property defines the HTML content:
+
+For testing purposes, it is convenient to use document.write():
+Using document.write() after an HTML document is loaded, will delete all existing HTML:
+
+You can use an alert box to display data:
+alert(5 + 6);
+
+For debugging purposes, you can call the console.log() method in the browser to display data.
+
+JavaScript does not have any print object or print methods.
+You cannot access output devices from JavaScript.
+The only exception is that you can call the window.print() method in the browser to print the content of the current window
+
+
+STATEMENTS
+
+On the web, you might see examples without semicolons.
+Ending statements with semicolon is not required, but highly recommended
+
+JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.
+A good practice is to put spaces around operators ( = + - * / ):
+example: let x = y + z;
+
+If a JavaScript statement does not fit on one line, the best place to break it is after an operator:
+document.getElementById("demo").innerHTML =
+"Hello Dolly!";
+
+
+
+
+
+
+
+VARIABLES
+
+When to Use JavaScript var?
+Always declare JavaScript variables with var,let, orconst.
+The var keyword is used in all JavaScript code from 1995 to 2015.
+The let and const keywords were added to JavaScript in 2015.
+If you want your code to run in older browser, you must use var
+
+
+
+When to Use JavaScript const?
+If you want a general rule: always declare variables with const.
+If you think the value of the variable can change, use let.
+
+All JavaScript variables must be identified with unique names.
+These unique names are called identifiers.
+Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+The general rules for constructing names for variables (unique identifiers) are:
+Names can contain letters, digits, underscores, and dollar signs.
+Names must begin with a letter
+Names can also begin with $ and _ (but we will not use it in this tutorial)
+Names are case sensitive (y and Y are different variables)
+Reserved words (like JavaScript keywords) cannot be used as names
+
+
+You cannot re-declare a variable declared with let or const.
+
+
+The let keyword was introduced in ES6 (2015).
+Variables defined with let cannot be Redeclared.
+Variables defined with let must be Declared before use.
+Variables defined with let have Block Scope. (Variables declared inside a { } block 
+cannot be accessed from outside the block)
+
+
+
+The const keyword was introduced in ES6 (2015).
+Variables defined with const cannot be Redeclared.
+Variables defined with const cannot be Reassigned.
+Variables defined with const have Block Scope
+JavaScript const variables must be assigned a value when they are declared:
+As a general rule, always declare a variable with const unless you know that the value will change.
+Use const when you declare:
+A new Array
+A new Object
+A new Function
+A new RegExp
+Declaring a variable with const is similar to let when it comes to Block Scope.
+Variables defined with var are hoisted to the top and can be initialized at any time.
+
+
+
+
+Creating Date Objects
+Date objects are created with the new Date() constructor.
+
+There are 4 ways to create a new date object:
+
+new Date()
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+new Date(milliseconds)
+new Date(date string)
+
+Date objects are static. The computer time is ticking, but date objects are not.
+(they are fixed points pulled from the clock at the time of creation)
+
+7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order):
+example: const d = new Date(2018, 11, 24, 10, 33, 30, 0);
+
+Note: JavaScript counts months from 0 to 11:
+January = 0.
+December = 11.
+Specifying a month higher than 11, will not result in an error but add the overflow to the next year.
+
+JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated).
+Zero time is January 01, 1970 00:00:00 UTC.
+
+
+There are generally 3 types of JavaScript date input formats:
+	
+ISO Date	"2015-03-25" (The International Standard)
+Short Date	"03/25/2015"
+Long Date	"Mar 25 2015" or "25 Mar 2015"
+The ISO format follows a strict standard in JavaScript.
+The other formats are not so well defined and might be browser specific.
+
+
+
+THE MATH OBJECT
+Unlike other objects, the Math object has no constructor.
+The Math object is static.
+All methods and properties can be used without creating a Math object first.
+The syntax for any Math property is : Math.property.
+
+
+The For In Loop
+The JavaScript for in statement loops through the properties of an Object:
+
+
+Syntax
+for (key in object) {
+  // code block to be executed
+}
+
+
+Example
+const person = {fname:"John", lname:"Doe", age:25};
+
+let text = "";
+for (let x in person) {
+  text += person[x];
+}
+
+
+Example Explained
+The for in loop iterates over a person object
+Each iteration returns a key (x)
+The key is used to access the value of the key
+The value of the key is person[x]
+
+
+
+
+IMMEDIATELY INVOKED FUNCTION EXPRESSION:
+
+
+     (function() {
+         console.log('Immediately Invoked Function Expression');
+     })();
+
+
+
+
+
+    //ternary operator
+    let a = 1, b = '1';
+    let result = (a == b) ? 'equal' : 'inequal'
+
+
+
+
+
+
+the 'THIS' keyword.
+
+when in the global scope 'this' refers to the global object. 
+
+the THIS keyword depends on HOW a function is called
+an object can be passed as the first argument to 'call' or 'apply' and this will be bound to it
+
+both 'call' and 'apply' allow you to explicitly set what you want to represent 'this'. the difference is in how
+the additional arguments to the function are met.
+
+
+
+CONSTRUCTORS:
+
+use CAPITALS:
+function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+}
+
+let myCar = new Car('Mazda', 'Cx9', 2013)
+
+the NEW keyword is what makes something a constructor call, not the function itself!
+

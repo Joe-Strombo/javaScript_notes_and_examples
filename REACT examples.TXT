@@ -1,0 +1,144 @@
+
+
+
+___________________________________________________________________________________________________________________________
+
+
+// first sample showing react structure and components in JSX  
+
+
+ - component names need to be in PascalCase, rather than camelCase!
+ - they also need to be wrapped inside an html tag when you render them!
+
+
+example:
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+function TemporaryName() {
+    return (
+        <div>
+            <img src="./react-logo.png" width="40px" />
+            <h1>Fun facts about React</h1>
+            <ul>
+                <li>Was first released in 2013</li>
+                <li>Was originally created by Jordan Walke</li>
+                <li>Has well over 100K stars on GitHub</li>
+                <li>Is maintained by Facebook</li>
+                <li>Powers thousands of enterprise apps, including mobile apps</li>
+            </ul>
+        </div>
+    )
+}
+
+ReactDOM.render(<TemporaryName />, document.getElementById("root"))
+
+
+
+
+___________________________________________________________________________________________________________________________
+
+
+
+
+
+STATE example:   
+
+
+
+import React from "react"
+
+export default function App() {
+    const [isImportant, func] = React.useState("Yes")       
+    console.log(isImportant)
+    return (
+        <div className="state">
+            <h1 className="state--title">Is state important to know?</h1>
+            <div className="state--value">
+                <h1>{isImportant}</h1>
+            </div>
+        </div>
+    )
+}
+
+
+
+___________________________________________________________________________________________________________________________
+
+
+
+//   example of a little doodad that returns a list, adding an item each time you press the button. addItem is the function
+set to onClick, and the useState allows the list to automatically be updated and rerendered. 
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function App() {
+    /**
+     * Challenge: Convert the code below to use an array
+     * held in state instead of a local variable. Initialize 
+     * the state array with the same 2 items below
+     * 
+     * Don't worry about fixing `addItem` quite yet.
+     */
+    const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"])
+    
+    function addItem() {
+        // We'll work on this next
+        setThingsArray(prevThingsArray => {
+            return [...prevThingsArray, `Thing ${prevThingsArray.length + 1}`]
+        })
+    }
+    
+    const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
+    
+    return (
+        <div>
+            <button onClick={addItem}>Add Item</button>
+            {thingsElements}
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
+
+
+
+
+
+STATE practice and MAPPING over your array:
+
+
+
+import React from "react"
+import boxes from "./boxes"
+
+export default function App() {
+    const [squares, setSquares] = React.useState(boxes)
+    
+    const squareElements = squares.map(square => (
+        <div className="box" key={square.id}></div>
+    ))
+    /**
+     * Challenge part 1:
+     * 1. Initialize state with the default value of the
+     *    array pulled in from boxes.js
+     * 2. Map over that state array and display each one
+     *    as an empty square (black border, transparent bg color)
+     *    (Don't worry about using the "on" property yet)
+     */
+    return (
+        <main>
+            {squareElements}
+        </main>
+    )
+}
+
+
+
+
+_____________________________________________________________________________________________________-
