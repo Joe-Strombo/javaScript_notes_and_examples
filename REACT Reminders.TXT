@@ -1,0 +1,9 @@
+
+
+
+
+
+ - props are like attributes for an HTML element cept they're for JSX Elements and u make ur own names for them!
+
+ - if a component is gonna receive props u have to put props in the components' parenthesis ():
+	Export Default Function JoesExample(props) {}
